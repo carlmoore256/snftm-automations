@@ -1,5 +1,3 @@
-import ffmpeg
-
 class FilterInput:
     def __init__(self, stream, metadata):
         self.stream = stream
@@ -21,8 +19,8 @@ def pad_center_native(input : FilterInput, output_resolution, color='black'):
 
 def pad_center_and_resize(input : FilterInput, output_resolution, resize_resolution, color='black'):
 
-    assert output_resolution['width'] > resize_resolution['width']
-    assert output_resolution['height'] > resize_resolution['height']
+    assert output_resolution['width'] >= resize_resolution['width']
+    assert output_resolution['height'] >= resize_resolution['height']
 
     pad_x = (output_resolution['width'] - resize_resolution['width']) // 2
     pad_y = (output_resolution['height'] - resize_resolution['height']) // 2

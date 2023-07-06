@@ -44,26 +44,3 @@ export async function getMarketplaceListingPage(url) {
     const html = await getCachedHTML(url, marketplaceInfo.requiresBrowser);
     return new JSDOM(html).window.document;
 }
-
-
-// export function parseMarketplaceName(url) {
-//     if (url.includes("opensea.io")) {
-//         return "OpenSea";
-//     }
-//     if (url.includes("makersplace.com")) {
-//         return "MakersPlace";
-//     }
-//     if (url.includes("foundation.app")) {
-//         return "Foundation";
-//     }
-//     if (url.includes("rarible.com")) {
-//         return "Rarible";
-//     }
-//     if (url.includes("fxhash.xyz")) {
-//         return "FxHash";
-//     }
-//     if (url.includes("objkt.com")) {
-//         return "Objkt";
-//     }
-//     return null;
-// }
